@@ -15,9 +15,9 @@ function App() {
     let messageTasks = '';
     if(tasks.length == 0) 
       messageTasks = <p className="text-gray-400 text-semibold text-center ml-4">you are done!</p>
-      // useEffect(() => {
-      //   window.localStorage.setItem('tasks' , JSON.stringify(tasks));
-      // } , [tasks]);
+      useEffect(() => {
+        window.localStorage.setItem('tasks' , JSON.stringify(tasks));
+      } , [tasks]);
   return (
     <>
     <div className="flex justify-center mt-24">
