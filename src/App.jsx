@@ -1,11 +1,10 @@
-import { useState , useEffect } from "react";
+import { useState , useEffect} from "react";
 import TaskInput from "./components/TaskInput"
 import TaskItem from "./components/TaskItem";
 import Status from "./components/Status";
-
 function App() {
-  // const storedTasks = JSON.parse(localStorage.getItem('tasks'));
-  
+  const storedTasks = localStorage.getItem('tasks');
+  console.log(storedTasks);
   const [tasks , setTasks] = useState([]);
     function RecieveNewTask (task) {
       setTasks((prevTasks) => [...prevTasks , task]);
@@ -16,10 +15,10 @@ function App() {
     let messageTasks = '';
     if(tasks.length===0)
       messageTasks = <p className="text-gray-400 text-semibold text-center ml-4">you are done!</p>
-      useEffect(() => {
-        window.localStorage.setItem('tasks' , JSON.stringify(1));
-      } ,[tasks]);
-  return (
+      useEffect (() => {
+        localStorage.setItem('tasks' , JSON.stringify(tasks));
+      } , [tasks]);
+    return (
     <>
     <div className="flex justify-center mt-24">
       <div className="bg-cyan-900 rounded-lg  py-6 px-2">
