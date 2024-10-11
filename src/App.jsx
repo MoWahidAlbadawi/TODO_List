@@ -3,9 +3,8 @@ import TaskInput from "./components/TaskInput"
 import TaskItem from "./components/TaskItem";
 import Status from "./components/Status";
 function App() {
-  const storedTasks = localStorage.getItem('tasks');
-  console.log(storedTasks);
-  const [tasks , setTasks] = useState([]);
+  const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+  const [tasks , setTasks] = useState([...storedTasks]);
     function RecieveNewTask (task) {
       setTasks((prevTasks) => [...prevTasks , task]);
     }
