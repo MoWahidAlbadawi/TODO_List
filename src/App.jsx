@@ -3,8 +3,7 @@ import TaskInput from "./components/TaskInput"
 import TaskItem from "./components/TaskItem";
 import Status from "./components/Status";
 function App() {
-  const storedTasks = JSON.parse(localStorage.getItem('tasks'));
-  const [tasks , setTasks] = useState([...storedTasks]);
+  const [tasks , setTasks] = useState([]);
     function RecieveNewTask (task) {
       setTasks((prevTasks) => [...prevTasks , task]);
     }
@@ -14,9 +13,6 @@ function App() {
     let messageTasks = '';
     if(tasks.length===0)
       messageTasks = <p className="text-gray-400 text-semibold text-center ml-4">you are done!</p>
-      useEffect (() => {
-        localStorage.setItem('tasks' , JSON.stringify(tasks));
-      } , [tasks]);
     return (
     <>
     <div className="flex justify-center mt-24">
