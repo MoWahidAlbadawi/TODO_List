@@ -4,7 +4,7 @@ import TaskItem from "./components/TaskItem";
 import Status from "./components/Status";
 
 function App() {
-  const [tasks , setTasks] = useState();
+  const [tasks , setTasks] = useState([]);
     function RecieveNewTask (task) {
       setTasks((prevTasks) => [...prevTasks , task]);
     }
@@ -21,11 +21,11 @@ function App() {
       <TaskInput onAddTask = {RecieveNewTask}/>
       <span className="font-extrabold text-gray-400 text-left ml-4">To Do</span>
       {messageTasks}
-      <ol>
+      <ul>
         {tasks.map((task) => (
           <TaskItem task = {task} onDeleteItem= {deleteItem}/>
         ))}
-      </ol>
+      </ul>
       </div>
     </div>
     <Status tasks={tasks}/>
