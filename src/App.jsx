@@ -4,9 +4,9 @@ import TaskItem from "./components/TaskItem";
 import Status from "./components/Status";
 
 function App() {
-  const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+  // const storedTasks = JSON.parse(localStorage.getItem('tasks'));
   
-  const [tasks , setTasks] = useState(storedTasks);
+  const [tasks , setTasks] = useState([]);
     function RecieveNewTask (task) {
       setTasks((prevTasks) => [...prevTasks , task]);
     }
@@ -17,7 +17,7 @@ function App() {
     if(tasks.length===0)
       messageTasks = <p className="text-gray-400 text-semibold text-center ml-4">you are done!</p>
       useEffect(() => {
-        window.localStorage.setItem('tasks' , JSON.stringify(tasks));
+        window.localStorage.setItem('tasks' , JSON.stringify(1));
       } ,[tasks]);
   return (
     <>
