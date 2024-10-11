@@ -11,7 +11,7 @@ function App() {
     function deleteItem (myTask) {
       setTasks((tasks) => tasks.filter((task) => task!==myTask));
     }
-    let messageTasks = '';k
+    let messageTasks = '';
       messageTasks = <p className="text-gray-400 text-semibold text-center ml-4">you are done!</p>
   return (
     <>
