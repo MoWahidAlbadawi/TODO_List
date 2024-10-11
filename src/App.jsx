@@ -14,6 +14,7 @@ function App() {
       setTasks((tasks) => tasks.filter((task) => task!==myTask));
     }
     let messageTasks = '';
+    if(tasks.length===0)
       messageTasks = <p className="text-gray-400 text-semibold text-center ml-4">you are done!</p>
       useEffect(() => {
         window.localStorage.setItem('tasks' , JSON.stringify(tasks));
