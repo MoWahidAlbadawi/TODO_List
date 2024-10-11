@@ -4,20 +4,15 @@ import TaskItem from "./components/TaskItem";
 import Status from "./components/Status";
 
 function App() {
-  const storedTasks = JSON.parse(window.localStorage.getItem('tasks'));
-  const [tasks , setTasks] = useState([...storedTasks]);
+  const [tasks , setTasks] = useState();
     function RecieveNewTask (task) {
       setTasks((prevTasks) => [...prevTasks , task]);
     }
     function deleteItem (myTask) {
       setTasks((tasks) => tasks.filter((task) => task!==myTask));
     }
-    let messageTasks = '';
-    if(tasks.length == 0) 
+    let messageTasks = '';k
       messageTasks = <p className="text-gray-400 text-semibold text-center ml-4">you are done!</p>
-      useEffect(() => {
-        window.localStorage.setItem('tasks' , JSON.stringify(tasks));
-      } , [tasks]);
   return (
     <>
     <div className="flex justify-center mt-24">
