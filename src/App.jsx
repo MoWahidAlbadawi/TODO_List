@@ -69,7 +69,7 @@ function App() {
       <TaskInput onAddTask = {RecieveNewTask}/>
       <span className="font-extrabold text-gray-400 text-left ml-4">To Do</span>
       {messageTasks}
-      {error && <p className="text-gray-400 text-semibold text-center ml-4 w-64">there is a problem , make sure your vpn is running and try again</p>}
+      {error && <p className="text-gray-400 text-semibold text-center ml-4 w-64">some thing wrong! try again please</p>}
               <ul>
         {tasks.map((task) => (
           <TaskItem task = {task.task} y={task.id} userId={userId}/>
